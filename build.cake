@@ -1,13 +1,13 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-var solution = "Cake.DependencyCheck.sln";
-var appName = "Cake.DependencyCheck";
+var solution = "Cake.Appium.sln";
+var appName = "Cake.Appium";
 
 var apiKey = EnvironmentVariable("NUGET_API_KEY") ?? "abcdef0123456789";
 var buildNumber = EnvironmentVariable("APPVEYOR_BUILD_NUMBER") ?? "0";
 
-var version = EnvironmentVariable("APPVEYOR_REPO_TAG_NAME") ?? "1.2.0";
+var version = EnvironmentVariable("APPVEYOR_REPO_TAG_NAME") ?? "1.0.0";
 
 Setup(context =>
 {
@@ -66,12 +66,12 @@ Task("Pack")
             Title = appName,
             Authors = new[] { "Burak İnce" },
             Owners = new[] { "Burak İnce", "cake-contrib" },
-            Description = "OWASP Dependency-Check is a utility that identifies project dependencies and checks if there are any known, publicly disclosed, vulnerabilities.",
-            Summary = "OWASP Dependency-Check is a utility that identifies project dependencies and checks if there are any known, publicly disclosed, vulnerabilities.",
+            Description = "Appium is an open source, cross-platform test automation tool for native, hybrid and mobile web and desktop apps.",
+            Summary = "Appium is an open source, cross-platform test automation tool for native, hybrid and mobile web and desktop apps.",
             IconUrl = new Uri("https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png"),
-            ProjectUrl = new Uri("https://github.com/burakince/Cake.DependencyCheck"),
-            LicenseUrl = new Uri("https://github.com/burakince/Cake.DependencyCheck/blob/master/LICENSE"),
-            Tags = new [] { "Cake", "OWASP", "DependencyCheck", "Security" },
+            ProjectUrl = new Uri("https://github.com/burakince/Cake.Appium"),
+            LicenseUrl = new Uri("https://github.com/burakince/Cake.Appium/blob/master/LICENSE"),
+            Tags = new [] { "Cake", "Appium", "Test", "Webdriver", "device", "automation" },
             RequireLicenseAcceptance = false,
             Symbols = false,
             NoPackageAnalysis = true,
@@ -79,36 +79,36 @@ Task("Pack")
             {
                 new NuSpecContent
                 {
-                    Source = "netstandard1.6/Cake.DependencyCheck.dll",
+                    Source = "netstandard1.6/Cake.Appium.dll",
                     Target = "lib/netstandard1.6"
                 },
                 new NuSpecContent
                 {
-                    Source = "netstandard1.6/Cake.DependencyCheck.xml",
+                    Source = "netstandard1.6/Cake.Appium.xml",
                     Target = "lib/netstandard1.6"
                 },
                 new NuSpecContent
                 {
-                    Source = "net45/Cake.DependencyCheck.dll",
+                    Source = "net45/Cake.Appium.dll",
                     Target = "lib/net45"
                 },
                 new NuSpecContent
                 {
-                    Source = "net45/Cake.DependencyCheck.xml",
+                    Source = "net45/Cake.Appium.xml",
                     Target = "lib/net45"
                 },
                 new NuSpecContent
                 {
-                    Source = "net46/Cake.DependencyCheck.dll",
+                    Source = "net46/Cake.Appium.dll",
                     Target = "lib/net46"
                 },
                 new NuSpecContent
                 {
-                    Source = "net46/Cake.DependencyCheck.xml",
+                    Source = "net46/Cake.Appium.xml",
                     Target = "lib/net46"
                 }
             },
-            BasePath = "./src/Cake.DependencyCheck/bin/release",
+            BasePath = "./src/Cake.Appium/bin/release",
             OutputDirectory = "./nuget"
         };
 
