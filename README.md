@@ -1,2 +1,2 @@
 # Cake.Appium
-Appium Cake plugin
+Appium Client Cake plugin
